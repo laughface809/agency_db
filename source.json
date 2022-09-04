@@ -1,7 +1,7 @@
 {
     "posts": [
       { "id": 1, "body": "This the dummy CopyWriting" },
-      { "id": 2, "body": "Powered By Kominfo" }
+      { "id": 2, "body": "Powered By Kominfo Good" }
     ],
     "comments": [
       { "id": 1, "body": "Kominfo", "postId": 1 },
