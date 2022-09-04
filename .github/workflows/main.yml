@@ -15,5 +15,6 @@ jobs:
           username: ${{ secrets.VUSERNAME }}
           key: ${{ secrets.VPRIVATE_KEY }}
           port: ${{ secrets.PORT }}
+          passphrase: ${{ secrets.VPASSPHRASE }}
           script: |
               whoami
