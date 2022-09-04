@@ -1,0 +1,10 @@
+{
+    "posts": [
+      { "id": 1, "body": "Kominfo" },
+      { "id": 2, "body": "Gatsby" }
+    ],
+    "comments": [
+      { "id": 1, "body": "Kominfo Data", "postId": 1 },
+      { "id": 2, "body": "Gatsby Data", "postId": 2 }
+    ]
+  }
