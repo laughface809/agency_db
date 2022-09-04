@@ -11,12 +11,9 @@ jobs:
       - name: 'Deploying Images'
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.PRIVATE_KEY }}
+          host: ${{ secrets.VHOST }}
+          username: ${{ secrets.VUSERNAME }}
+          key: ${{ secrets.VPRIVATE_KEY }}
           port: ${{ secrets.PORT }}
           script: |
-              cd /home/dotamonster/agency_db
-              git pull
-              docker rm $(docker stop $(docker ps -a -q --filter ancestor=clue/json-server --format="{{.ID}}"))
-              docker run -d -p 1337:80 -v /home/dotamonster/agency_db/source.json:/data/db.json clue/json-server
+              whoami
