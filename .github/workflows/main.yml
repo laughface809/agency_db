@@ -1,13 +1,17 @@
-name: remote ssh command
-on: [push]
-jobs:
+name: DB Source
 
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
   build:
-    name: Build
+    name: 'Running DB Source'
     runs-on: ubuntu-latest
     steps:
-    - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@master
+    - uses: actions/checkout@v3
+    - name: 'Deploying Images'
+      uses: appleboy/ssh-action@v0.1.5
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
