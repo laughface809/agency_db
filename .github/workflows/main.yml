@@ -17,7 +17,7 @@ jobs:
           port: ${{ secrets.PORT }}
           passphrase: ${{ secrets.VPASSPHRASE }}
           script: |
-              cd /home/bima
+              cd /home/bima/agency_db
               git pull
               docker rm $(docker stop $(docker ps -a -q --filter ancestor=clue/json-server --format="{{.ID}}"))
-              docker run -d -p 1337:80 -v /home/bima/source.json:/data/db.json clue/json-server
+              docker run -d -p 1337:80 -v /home/bima/agency_db/source.json:/data/db.json clue/json-server
