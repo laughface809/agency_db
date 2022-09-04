@@ -4,8 +4,8 @@
       { "id": 2, "body": "Gatsby" }
     ],
     "comments": [
-      { "id": 1, "body": "Kominfo Data", "postId": 1 },
-      { "id": 2, "body": "Gatsby Data", "postId": 2 },
+      { "id": 1, "body": "Kominfo", "postId": 1 },
+      { "id": 2, "body": "Gatsby", "postId": 2 },
       { "id": 2, "body": "2022", "postId": 2 }
     ]
   }
