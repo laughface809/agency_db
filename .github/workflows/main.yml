@@ -1,23 +1,21 @@
-name: Source DB
+name: DB Source
+
 on:
   push:
     branches: [ "main" ]
-  workflow_dispatch:
+
 jobs:
   build:
+    name: 'Running DB Source'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: 'Deploying Images'
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.PRIVATE_KEY }}
-          port: ${{ secrets.PORT }}
-          script: |
-              whoami
-              # cd /home/dotamonster/agency_db
-              # git pull
-              # docker rm $(docker stop $(docker ps -a -q --filter ancestor=clue/json-server --format="{{.ID}}"))
-              # docker run -d -p 1337:80 -v /home/dotamonster/agency_db/source.json:/data/db.json clue/json-server
+    - uses: actions/checkout@v3
+    - name: 'Deploying Images'
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.PRIVATE_KEY }}
+        port: ${{ secrets.PORT }}
+        script: |
+            whoami
