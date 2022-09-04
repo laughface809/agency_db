@@ -1,0 +1,22 @@
+name: Source DB
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: 'Deploying Images'
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.PRIVATE_KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+              cd /home/dotamonster/agency_db
+              git pull
+              docker kill clue/json-server
+              docker run -d -p 1337:1337 -v source.json:/data/db.json clue/json-server
