@@ -11,11 +11,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: 'Deploying Images'
-      uses: appleboy/ssh-action@master
+      uses: appleboy/ssh-action@v0.1.5
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.PRIVATE_KEY }}
         port: ${{ secrets.PORT }}
-        script: |
-            whoami
+        script: whoami
