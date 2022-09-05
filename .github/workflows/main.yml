@@ -21,8 +21,3 @@ jobs:
               git pull
               docker rm $(docker stop $(docker ps -a -q --filter ancestor=clue/json-server --format="{{.ID}}"))
               docker run -d -p 1337:80 -v /home/bima/agency_db/source.json:/data/db.json clue/json-server
-      - name: Asana Tix Doing
-        uses: TheDotLabs/github-asana-action@v4.0.2
-        with:
-          asana-token: '1/1200790668297351:fe9df17b2548e660be1e836b79969382'
-          targets_commit_push: '[{"project": "AidHub MEP DEV", "section": "Doing"}, {"project": "AidHub MEP DEV", "section": "QA Test .DEV"}]'
